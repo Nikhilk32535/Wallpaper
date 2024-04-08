@@ -44,6 +44,7 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation (libs.neumorphism)
+    implementation("com.google.firebase:firebase-database:20.3.1")
     implementation ("com.firebaseui:firebase-ui-database:8.0.2")
     implementation ("com.github.bumptech.glide:glide:5.0.0-rc01")
 

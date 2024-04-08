@@ -13,12 +13,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 RecyclerView recyclerView;
-adapter myadapter;
+MyAdapter adapter;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("Nature");
 
     String appName = "Nikhil";
-    String appUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_YJouNKi-9EG28vgulTd_2OFxMCV1jrkwrHZqjNQv4A&s";
+    String appUrl = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ adapter myadapter;
      /*   // Create wallpaper Model instance
         Model wallpaperModel = new Model();
         wallpaperModel.setName(appName);
-        wallpaperModel.seturl(appUrl);
+        wallpaperModel.setUrl(appUrl);
 
         // Push data to Firebase
         myRef.push().setValue(wallpaperModel); */
@@ -42,25 +42,22 @@ adapter myadapter;
                 new FirebaseRecyclerOptions.Builder<Model>()
                         .setQuery(myRef, Model.class)
                         .build();
-        if(options==null){
-        Toast.makeText(MainActivity.this,"Step 2...",Toast.LENGTH_LONG).show();}
 
-        myadapter = new adapter(options);
-        Toast.makeText(MainActivity.this,"Step 3...",Toast.LENGTH_LONG).show();
-        recyclerView.setAdapter(myadapter);
+        adapter=new MyAdapter(options);
+        recyclerView.setAdapter(adapter);
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        myadapter.startListening();
+        adapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        myadapter.stopListening();
+        adapter.stopListening();
     }
 
 }

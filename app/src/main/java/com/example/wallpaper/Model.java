@@ -8,7 +8,7 @@ public class Model {
 
     }
 
-    public Model(String url, String name) {
+    public Model(String name, String url, String download) {
         this.name = name;
         this.url = url;
     }
@@ -28,4 +28,5 @@ public class Model {
     public void setName(String name) {
         this.name = name;
     }
+
 }
