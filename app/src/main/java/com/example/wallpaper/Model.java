@@ -2,14 +2,12 @@ package com.example.wallpaper;
 
 public class Model {
 
-    String name,url;
-
+    String url;
     Model() {
 
     }
 
-    public Model(String name, String url, String download) {
-        this.name = name;
+    public Model(String url, int idnum) {
         this.url = url;
     }
 
@@ -20,13 +18,4 @@ public class Model {
     public void setUrl(String url) {
         this.url = url;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
 }

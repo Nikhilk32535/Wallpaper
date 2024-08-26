@@ -1,63 +1,68 @@
 package com.example.wallpaper;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-RecyclerView recyclerView;
-MyAdapter adapter;
+    RecyclerView recyclerView;
+    MyAdapter adapter;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Nature");
+    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Image1");
+    ArrayList<Model> Datalist;
 
-    String appName = "Nikhil";
-    String appUrl = "";
+    private static final int REQUEST_CODE_WRITE_STORAGE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView=findViewById(R.id.recyclerview);
-        Toast.makeText(MainActivity.this,"start...",Toast.LENGTH_LONG).show();
-     /*   // Create wallpaper Model instance
-        Model wallpaperModel = new Model();
-        wallpaperModel.setName(appName);
-        wallpaperModel.setUrl(appUrl);
 
-        // Push data to Firebase
-        myRef.push().setValue(wallpaperModel); */
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_WRITE_STORAGE);
+        }
+
+        recyclerView = findViewById(R.id.recyclerview);
 
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        Datalist = new ArrayList<>();
 
-        FirebaseRecyclerOptions<Model> options =
-                new FirebaseRecyclerOptions.Builder<Model>()
-                        .setQuery(myRef, Model.class)
-                        .build();
-
-        adapter=new MyAdapter(options);
+        adapter = new MyAdapter(Datalist, this);
         recyclerView.setAdapter(adapter);
 
-    }
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    Model model = dataSnapshot.getValue(Model.class);
+                    Datalist.add(model);
+                }
+                adapter.notifyDataSetChanged();
+            }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        adapter.startListening();
-    }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        adapter.stopListening();
+            }
+        });
     }
-
 }

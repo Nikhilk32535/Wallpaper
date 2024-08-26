@@ -4,30 +4,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#FFFFFF"
+    android:background="#252525"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".MainActivity">
 
-    <soup.neumorphism.NeumorphCardView
-        android:id="@+id/heading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:neumorph_lightSource="leftTop"
-        app:neumorph_shapeType="basin"
-        android:layout_margin="15dp"
-        app:neumorph_strokeWidth="3dp"
-        android:layout_centerHorizontal="true">
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/heading"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Wallpaper"
+        android:gravity="center"
+        android:textColor="#2741D5"
         android:textSize="35dp"
+        android:fontFamily="@font/saman___"
+        android:background="@drawable/bgcorner"
         android:layout_margin="7dp"
         android:layout_centerHorizontal="true"
          />
-</soup.neumorphism.NeumorphCardView>
+
 
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recyclerview"
@@ -35,6 +32,5 @@
     android:layout_height="wrap_content"
     android:layout_below="@+id/heading"
     tools:listitem="@layout/wallpaperlayout"/>
-
 
 </RelativeLayout>
