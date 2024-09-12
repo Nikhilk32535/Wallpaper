@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,14 +22,18 @@ import java.io.IOException;
 public class full_screen extends AppCompatActivity {
 
     ImageView imageView;
-    String url;
+    TextView heading;
+    String url,name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_screen);
 
         imageView=findViewById(R.id.fullpic);
+        heading=findViewById(R.id.heading);
         url=getIntent().getStringExtra("url");
+        name=getIntent().getStringExtra("name");
+        heading.setText(name);
         Glide.with(this).load(url).into(imageView);
 
     }
@@ -55,7 +60,5 @@ public class full_screen extends AppCompatActivity {
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"/Crazy Wallpaper/IMG"+System.currentTimeMillis()+".jpg");
             downloadManager.enqueue(request);
             Toast.makeText(this,"Image Downloaded",Toast.LENGTH_SHORT).show();
-
-
     }
 }

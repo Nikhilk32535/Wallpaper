@@ -2,13 +2,22 @@ package com.example.wallpaper;
 
 public class Model {
 
-    String url;
+    String name,url;
     Model() {
 
     }
 
-    public Model(String url, int idnum) {
+    public Model(String name, String url) {
+        this.name = name;
         this.url = url;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUrl() {

@@ -5,14 +5,32 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#252525"
     tools:context=".full_screen">
+
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wallpaper"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:lines="1"
+        android:textSize="35dp"
+        android:background="@drawable/bgcorner"
+        android:layout_margin="7dp"
+        android:layout_centerHorizontal="true"
+        />
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/fullpic"
         android:padding="10dp"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/downnav"/>
+        android:layout_above="@+id/downnav"
+        android:layout_below="@+id/heading"/>
 
     <LinearLayout
         android:id="@+id/downnav"
@@ -24,7 +42,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Set wallpaper"
+        android:text="Set"
         android:layout_margin="5dp"
         android:onClick="setwallpaper"
         android:layout_marginBottom="10dp"
@@ -33,7 +51,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Download img"
+            android:text="Download"
             android:layout_margin="5dp"
             android:onClick="downloadimg"
             android:layout_marginBottom="10dp"

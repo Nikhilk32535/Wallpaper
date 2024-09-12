@@ -36,7 +36,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         Glide.with(context).load(model.getUrl()).into(holder.imageView);
         holder.itemView.setOnClickListener(v-> {
             context.startActivity(new Intent(context, full_screen.class)
-                    .putExtra("url", dataList.get(position).getUrl()));
+                    .putExtra("url", dataList.get(position).getUrl())
+                    .putExtra("name", dataList.get(position).getName()));
 
         });
     }
