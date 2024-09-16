@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#252525"
+    tools:context=".fragment.Category_view">
+
+       <RelativeLayout
+           android:id="@+id/nature"
+           android:layout_width="match_parent"
+           android:layout_height="100dp"
+           android:background="@drawable/bgcorner"
+           android:layout_margin="10dp"
+           android:backgroundTint="#5BB60E"
+           android:padding="5dp">
+
+              <ImageView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:src="@drawable/ic_christmas_tree"/>
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:textColor="@color/white"
+                  android:text="NATURE"
+                  android:textSize="35sp"
+                  android:fontFamily="@font/saman___"
+                  android:gravity="center"/>
+
+       </RelativeLayout>
+
+       <RelativeLayout
+           android:id="@+id/animal"
+           android:layout_width="match_parent"
+           android:layout_height="100dp"
+           android:background="@drawable/bgcorner"
+           android:layout_margin="10dp"
+           android:backgroundTint="#C11E58"
+           android:padding="5dp">
+
+              <ImageView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:src="@drawable/ic_dog"/>
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:textColor="@color/white"
+                  android:text="ANIMAL"
+                  android:textSize="35sp"
+                  android:fontFamily="@font/saman___"
+                  android:gravity="center"/>
+
+       </RelativeLayout>
+
+       <RelativeLayout
+           android:id="@+id/weather"
+           android:layout_width="match_parent"
+           android:layout_height="100dp"
+           android:background="@drawable/bgcorner"
+           android:layout_margin="10dp"
+           android:backgroundTint="#4D63E2"
+           android:padding="5dp">
+
+              <ImageView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:src="@drawable/ic_rainbow"/>
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:textColor="@color/white"
+                  android:text="WEATHER"
+                  android:textSize="35sp"
+                  android:fontFamily="@font/saman___"
+                  android:gravity="center"/>
+
+       </RelativeLayout>
+
+       <RelativeLayout
+           android:id="@+id/cars"
+           android:layout_width="match_parent"
+           android:layout_height="100dp"
+           android:background="@drawable/bgcorner"
+           android:layout_margin="10dp"
+           android:backgroundTint="#00B0FF"
+           android:padding="5dp">
+
+              <ImageView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:src="@drawable/ic_car"/>
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:textColor="@color/white"
+                  android:text="CARS"
+                  android:textSize="35sp"
+                  android:fontFamily="@font/saman___"
+                  android:gravity="center"/>
+
+       </RelativeLayout>
+
+
+
+
+</LinearLayout>

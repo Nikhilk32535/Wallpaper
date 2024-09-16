@@ -1,14 +1,22 @@
-package com.example.wallpaper;
+package com.example.wallpaper.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wallpaper.model.Model;
+import com.example.wallpaper.adapter.MyAdapter;
+import com.example.wallpaper.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,7 +26,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class firebase_home extends Fragment {
+
     private static final int PAGE_SIZE = 20; // Number of images to load per page
     private boolean isLoading = false; // To check if data is currently loading
     private String lastLoadedKey = null; // Store the key of the last loaded item
@@ -28,17 +37,20 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("Wallpaper_App");
     ArrayList<Model> Datalist;
+    TextView homebtn, cetegorybtn;
+    LinearLayout homebar, categorybar;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_firebase_home, container, false);
 
-        recyclerView = findViewById(R.id.recyclerview);
+        recyclerView = view.findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+
         Datalist = new ArrayList<>();
-        adapter = new MyAdapter(Datalist, this);
+        adapter = new MyAdapter(Datalist, getActivity());
         recyclerView.setAdapter(adapter);
 
         // Load the initial set of data
@@ -53,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        return view;
     }
 
     private void loadMoreData() {
@@ -74,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         Model model = dataSnapshot.getValue(Model.class);
                         newItems.add(model);
-                        lastKey=dataSnapshot.getKey();
+                        lastKey = dataSnapshot.getKey();
                     }
 
                     if (!newItems.isEmpty()) {
@@ -82,8 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         Datalist.addAll(newItems);
                         adapter.notifyDataSetChanged();
                     } else if (Datalist.isEmpty()) {
-                        lastLoadedKey=null;
-                        Toast.makeText(MainActivity.this, "No data available", Toast.LENGTH_SHORT).show();
+                        lastLoadedKey = null;
                     }
                 }
                 isLoading = false; // Set loading to false after data is loaded

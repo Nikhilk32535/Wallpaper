@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
 
     <TextView
@@ -18,7 +18,7 @@
         android:text="Wallpaper"
         android:gravity="center"
         android:textColor="#2741D5"
-        android:textSize="35dp"
+        android:textSize="25dp"
         android:fontFamily="@font/saman___"
         android:background="@drawable/bgcorner"
         android:layout_margin="7dp"
@@ -26,11 +26,70 @@
          />
 
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerview"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/heading"
-    tools:listitem="@layout/wallpaperlayout"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/bar"
+        android:gravity="center"
+        android:layout_below="@id/heading">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginEnd="50dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOME"
+                android:textSize="20sp"
+                android:id="@+id/homebtn"
+                android:textColor="@color/white"/>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="5dp"
+                android:id="@+id/homebar"
+                android:background="@color/blue"
+                tools:ignore="Orientation" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CATEGORY"
+                android:textSize="20sp"
+                android:id="@+id/cetegorybtn"
+                android:textColor="@color/white"/>
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="5dp"
+                android:id="@+id/cetegorybar"
+                android:background="@color/white"
+                tools:ignore="Orientation" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragmentview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bar"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
 
 </RelativeLayout>

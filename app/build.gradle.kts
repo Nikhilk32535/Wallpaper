@@ -41,6 +41,7 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.recyclerview)
     implementation(libs.firebase.storage)
+    implementation(libs.volley)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
@@ -48,5 +49,7 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:5.0.0-rc01")
     implementation ("com.github.chrisbanes:PhotoView:2.3.0")
     implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+
+    implementation("ir.alirezaivaz:tablericons:1.12.0")
 
 }
