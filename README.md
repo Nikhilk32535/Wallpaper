@@ -6,7 +6,7 @@ Crazy Wallpaper is an Android app that allows users to explore, download, set, a
 
 - **Browse Wallpapers:** Explore high-quality wallpapers and set them as your device's background.
 - **Favorite Wallpapers:** Mark wallpapers as favorites and access them from a dedicated favorites section.
-- **Category Search (Upcoming Feature):** In a future update, users will be able to search for wallpapers by category.
+- **Category Search :** User can able to search wallpapers by pre-define category.
 - **Offline Favorites:** Favorite wallpapers are stored locally on the device using SQLite.
 - **Glide Integration:** Efficient loading and caching of wallpapers using the Glide library.
 - **Tab Layout & ViewPager2:** Easy navigation between Home, Categories, and Favorites using a clean tabbed interface.
