@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.wallpaper.model.Model;
 import com.example.wallpaper.R;
 import com.example.wallpaper.activity.full_screen;
@@ -35,10 +36,12 @@ public class Wallpaperadapter extends RecyclerView.Adapter<Wallpaperadapter.wall
     @Override
     public void onBindViewHolder(@NonNull Wallpaperadapter.wallpaperviewholder holder, int position) {
         Model model=datalist.get(position);
-    Glide.with(context).load(model.getMidium()).placeholder(R.drawable.imagesmode).into(holder.imageView);
+    Glide.with(context).load(model.getUrl()).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.imagesmode).into(holder.imageView);
     holder.itemView.setOnClickListener(v->{
-        context.startActivity(new Intent(context, full_screen.class)
-                .putExtra("url",datalist.get(position).getOrignal()));
+        Intent intent=new Intent(context, full_screen.class)
+                .putParcelableArrayListExtra("datalist",datalist)
+                .putExtra("position",position);
+        context.startActivity(intent);
         });
 
     }
@@ -50,8 +53,6 @@ public class Wallpaperadapter extends RecyclerView.Adapter<Wallpaperadapter.wall
 
     public static class wallpaperviewholder extends RecyclerView.ViewHolder {
         ImageView imageView;
-
-
         public wallpaperviewholder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.wallpaperimg);

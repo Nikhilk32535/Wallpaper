@@ -1,17 +1,29 @@
 package com.example.wallpaper.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.wallpaper.R;
+import com.example.wallpaper.activity.Fragmentview;
+import com.google.android.material.tabs.TabLayout;
 
-public class Category_view extends Fragment {
+public class category_view extends Fragment{
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
     RelativeLayout nature,animal,weather,cars;
+    TabLayout tabLayout;
+    ViewPager2 viewPager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,18 +41,20 @@ public class Category_view extends Fragment {
         setcategory(weather,"WEATHER");
         setcategory(cars,"CARS");
 
-
         return view;
     }
 
     public void setcategory(RelativeLayout layout,String massage){
         layout.setOnClickListener(v->{
-            if(getActivity()!=null){
-                getActivity().getIntent().putExtra("category",massage);
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragmentview,new category_res())
-                        .addToBackStack(null).commit();
-            }
+            Log.d("findmistake",massage);
+            String category=massage.toLowerCase();
+            Log.d("findmistake",category);
+
+                Intent intent=new Intent(getActivity(), Fragmentview.class);
+                intent.putExtra("category",category);
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
         });
     }
 }

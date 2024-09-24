@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#252525"
-    tools:context=".fragment.Category_view">
+    android:background="@color/Background"
+    tools:context=".fragment.category_view">
 
        <RelativeLayout
            android:id="@+id/nature"
@@ -20,12 +21,13 @@
               <ImageView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:src="@drawable/ic_christmas_tree"/>
+                  android:src="@drawable/ic_christmas_tree"
+                  app:tint="@color/icon" />
               <TextView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:textColor="@color/white"
-                  android:text="NATURE"
+                  android:textColor="@color/Text"
+                  android:text="||NATURE||"
                   android:textSize="35sp"
                   android:fontFamily="@font/saman___"
                   android:gravity="center"/>
@@ -44,12 +46,13 @@
               <ImageView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:src="@drawable/ic_dog"/>
+                  android:src="@drawable/ic_dog"
+                  app:tint="@color/icon"/>
               <TextView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:textColor="@color/white"
-                  android:text="ANIMAL"
+                  android:textColor="@color/Text"
+                  android:text="||ANIMAL||"
                   android:textSize="35sp"
                   android:fontFamily="@font/saman___"
                   android:gravity="center"/>
@@ -68,15 +71,21 @@
               <ImageView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:src="@drawable/ic_rainbow"/>
+                  android:src="@drawable/ic_rainbow"
+                  app:tint="@color/icon"/>
+
               <TextView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:textColor="@color/white"
-                  android:text="WEATHER"
-                  android:textSize="35sp"
+                  android:layout_alignParentEnd="true"
+                  android:layout_alignParentBottom="true"
+                  android:layout_marginEnd="5dp"
+                  android:layout_marginBottom="4dp"
                   android:fontFamily="@font/saman___"
-                  android:gravity="center"/>
+                  android:gravity="center"
+                  android:text="||WEATHER||"
+                  android:textColor="@color/Text"
+                  android:textSize="35sp" />
 
        </RelativeLayout>
 
@@ -92,19 +101,17 @@
               <ImageView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:src="@drawable/ic_car"/>
+                  android:src="@drawable/ic_car"
+                  app:tint="@color/icon"/>
               <TextView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:textColor="@color/white"
-                  android:text="CARS"
+                  android:textColor="@color/Text"
+                  android:text="||CARS||"
                   android:textSize="35sp"
                   android:fontFamily="@font/saman___"
                   android:gravity="center"/>
 
        </RelativeLayout>
-
-
-
 
 </LinearLayout>

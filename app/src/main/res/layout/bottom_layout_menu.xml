@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
     android:background="@drawable/bgcorner"
-    android:backgroundTint="#252525"
+    android:backgroundTint="@color/Background"
     android:layout_alignParentBottom="true"
     android:gravity="center">
 
@@ -20,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="What You want to do?"
-        android:textColor="@color/white"
+        android:textColor="@color/Text"
         android:textSize="15sp"
         android:layout_marginBottom="10dp"/>
 
@@ -34,18 +35,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_brand_google_photos"
+            app:tint="@color/Button"
             />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/homescreen"
-        android:text="Set wallpaper"
+        android:text="Set Home Screen"
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="@color/Text"
         android:layout_margin="5dp"
         android:padding="5dp"
-        android:gravity="center"/>
+        android:gravity="left"/>
 
     </LinearLayout>
 
@@ -59,18 +61,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_lock"
+            app:tint="@color/Button"
            />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/lockscreen"
         android:text="Set Lock screen"
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="@color/Text"
         android:layout_margin="5dp"
         android:padding="5dp"
-        android:gravity="center"/>
+        android:gravity="left"/>
 
     </LinearLayout>
 
@@ -84,18 +87,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_home_2"
-            />
+            app:tint="@color/Button"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bothscreen"
         android:text="Set Both "
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="@color/Text"
         android:layout_margin="5dp"
         android:padding="5dp"
-        android:gravity="center"/>
+        android:gravity="left"/>
 
     </LinearLayout>
 
@@ -109,18 +112,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_arrow_bar_to_down"
+            app:tint="@color/Button"
             />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/download"
         android:text="Saved in Gallery"
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="@color/Text"
         android:layout_margin="5dp"
         android:padding="5dp"
-        android:gravity="center"/>
+        android:gravity="left"/>
 
     </LinearLayout>
 

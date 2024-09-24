@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -17,20 +18,29 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.wallpaper.model.Model;
 import com.example.wallpaper.R;
 import com.example.wallpaper.adapter.Wallpaperadapter;
-import com.example.wallpaper.utility.utility;
+import com.example.wallpaper.model.Model;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class category_res extends Fragment {
 
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                requireActivity().finish();
+            }
+        });
+    }
     RecyclerView recyclerView;
     Wallpaperadapter adapter;
     ArrayList<Model> WallpaperList;
@@ -40,10 +50,14 @@ public class category_res extends Fragment {
 
     String pixcelurl;
 
+    public category_res(String category) {
+        this.category = category;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        category=getActivity().getIntent().getStringExtra("category");
+
         // Inflate the layout for this fragment
      View view=inflater.inflate(R.layout.fragment_category_res, container, false);
 
@@ -75,8 +89,6 @@ public class category_res extends Fragment {
               }
           }
       });
-
-        utility.toast(getActivity(),category);
         refreshdata();
 
      return view;
@@ -97,6 +109,7 @@ public class category_res extends Fragment {
         StringRequest request=new StringRequest(Request.Method.GET, pixcelurl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                ArrayList newitems = new ArrayList();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("photos");
@@ -106,13 +119,14 @@ public class category_res extends Fragment {
                         int id = jsonObject1.getInt("id");
                         JSONObject jsonObject2 = jsonObject1.getJSONObject("src");
                         String orignal = jsonObject2.getString("original");
-                        String midium = jsonObject2.getString("medium");
-                        Model model = new Model(id, orignal, midium);
-                        WallpaperList.add(model);
+                        Model model = new Model(id, orignal);
+                        newitems.add(model);
                     }
-                    adapter.notifyDataSetChanged();
-                    utility.toast(getActivity(),"page"+number);
-
+                    if(!newitems.isEmpty()) {
+                        Collections.shuffle(newitems);
+                        WallpaperList.addAll(newitems);
+                        adapter.notifyDataSetChanged();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

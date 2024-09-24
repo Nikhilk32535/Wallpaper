@@ -1,7 +1,10 @@
+import shadow.bundletool.com.android.tools.r8.internal.id
+
 plugins {
     alias(libs.plugins.androidApplication)
     id("com.google.gms.google-services")
 }
+
 
 android {
     namespace = "com.example.wallpaper"
@@ -13,7 +16,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -25,12 +27,20 @@ android {
                 "proguard-rules.pro"
             )
         }
+
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
 }
+
 
 dependencies {
 
@@ -42,14 +52,20 @@ dependencies {
     implementation(libs.recyclerview)
     implementation(libs.firebase.storage)
     implementation(libs.volley)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation(libs.firebase.auth)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation ("com.github.bumptech.glide:glide:5.0.0-rc01")
-    implementation ("com.github.chrisbanes:PhotoView:2.3.0")
-    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation (libs.glide)
+    implementation (libs.photoview)
+    implementation (libs.okhttp)
 
-    implementation("ir.alirezaivaz:tablericons:1.12.0")
+    implementation (libs.rxjava)
+    implementation (libs.rxandroid)
+
+    implementation(libs.tablericons)
 
 }

@@ -4,92 +4,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#252525"
+    android:background="@color/Background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".activity.MainActivity">
 
+    <RelativeLayout
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bgcorner"
+        >
 
     <TextView
-        android:id="@+id/heading"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Wallpaper"
-        android:gravity="center"
-        android:textColor="#2741D5"
-        android:textSize="25dp"
-        android:fontFamily="@font/saman___"
-        android:background="@drawable/bgcorner"
-        android:layout_margin="7dp"
-        android:layout_centerHorizontal="true"
-         />
-
-
-    <LinearLayout
+        android:id="@+id/wallpaperheading"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:id="@+id/bar"
+        android:layout_height="wrap_content"
+        android:text="||Wallpaper||"
         android:gravity="center"
-        android:layout_below="@id/heading">
+        android:textColor="@color/Text"
+        android:lines="1"
+        android:textSize="20dp"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:fontFamily="@string/fontstyle"
+        android:layout_centerHorizontal="true"
+        />
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_logout"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:onClick="logout"
+        />
+    </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_marginEnd="50dp"
-            android:gravity="center">
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="@color/Accent"
+        app:tabSelectedTextColor="@color/Accent"
+        android:background="@color/Background"
+        app:tabTextColor="@color/Text"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/heading"
+        app:tabMode="fixed"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="HOME"
-                android:textSize="20sp"
-                android:id="@+id/homebtn"
-                android:textColor="@color/white"/>
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="5dp"
-                android:id="@+id/homebar"
-                android:background="@color/blue"
-                tools:ignore="Orientation" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CATEGORY"
-                android:textSize="20sp"
-                android:id="@+id/cetegorybtn"
-                android:textColor="@color/white"/>
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="5dp"
-                android:id="@+id/cetegorybar"
-                android:background="@color/white"
-                tools:ignore="Orientation" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/fragmentview"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/bar"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        />
+        app:tabTextColor="@color/Primary"
+        android:layout_below="@id/tabLayout"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </RelativeLayout>

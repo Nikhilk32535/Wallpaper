@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    android:padding="16dp">
+
+    <!-- App Logo or Icon -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/wallpaper"
+        android:contentDescription="App Logo"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"/>
+
+    <!-- Welcome Text -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Wallpaper App"
+        android:textColor="@color/Text"
+        android:textSize="22sp"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Email Input -->
+    <EditText
+        android:id="@+id/useremail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:layout_below="@id/welcomeText"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/Text" />
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/inputPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:layout_below="@id/useremail"
+        android:layout_margin="16dp"
+        android:textColor="@color/Text" />
+
+    <!-- Sign In Button -->
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/Button"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/inputPassword"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+    <!-- Forgot Password Link -->
+    <TextView
+        android:id="@+id/txtForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textColor="@color/Text"
+        android:layout_below="@id/btnSignIn"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="16dp"
+        android:textSize="14sp"/>
+
+    <!-- Sign Up Link -->
+    <TextView
+        android:id="@+id/txtSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? Sign Up"
+        android:textColor="@color/Text"
+        android:layout_below="@id/txtForgotPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp"/>
+
+</RelativeLayout>
