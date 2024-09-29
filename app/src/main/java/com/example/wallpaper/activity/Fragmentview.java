@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.wallpaper.R;
 import com.example.wallpaper.fragment.Userauthentication;
 import com.example.wallpaper.fragment.category_res;
+import com.example.wallpaper.fragment.create_user;
 import com.example.wallpaper.utility.utility;
 
 public class Fragmentview extends AppCompatActivity {
@@ -44,9 +45,16 @@ public class Fragmentview extends AppCompatActivity {
                 .addToBackStack(null).commit();
         utility.log("Auth start");
     }
+
+    public void create_user(){
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentTransaction transaction=fragmentManager.beginTransaction();
+        transaction.replace(R.id.fragmentview,new create_user())
+                .addToBackStack(null).commit();
+        utility.log("create user start");
+    }
     @Override
     public void onBackPressed() {
-
             super.onBackPressed();
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#f0f8ff</color>
     <color name="blue">#2741D5</color>
     <color name="transparent">#00000000</color>
+    <color name="blur">#50ffffff</color>
 
 <!--    light background-->
 <!--    <color name="Background">#F5F5F5</color>-->
@@ -27,7 +28,5 @@
     <color name="Text">#212121</color>
     <color name="Button">#4CAF50</color>
     <color name="icon">#8E24AA</color>
-
-
 
 </resources>

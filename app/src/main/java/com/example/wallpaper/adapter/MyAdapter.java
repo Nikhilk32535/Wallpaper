@@ -38,7 +38,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Model model = dataList.get(position);
-        Glide.with(context).load(model.getUrl()).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.imagesmode).into(holder.imageView);
+        Glide.with(context).load(model.getUrl()).diskCacheStrategy(DiskCacheStrategy.ALL)
+                .placeholder(R.drawable.imagesmode).into(holder.imageView);
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, full_screen.class);
             intent.putParcelableArrayListExtra("datalist", dataList); // Ensure Model implements Parcelable

@@ -16,6 +16,15 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bgcorner"
         >
+        <ImageView
+            android:id="@+id/userinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_user_circle"
+            android:layout_alignParentStart="true"
+            android:layout_margin="10dp"
+            android:onClick="UserInfo"
+            />
 
     <TextView
         android:id="@+id/wallpaperheading"
@@ -25,12 +34,14 @@
         android:gravity="center"
         android:textColor="@color/Text"
         android:lines="1"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:padding="5dp"
         android:layout_margin="5dp"
         android:fontFamily="@string/fontstyle"
         android:layout_centerHorizontal="true"
-        />
+        android:layout_toRightOf="@id/userinfo"
+        android:layout_toLeftOf="@id/logout"
+        tools:ignore="HardcodedText" />
     <ImageView
         android:id="@+id/logout"
         android:layout_width="wrap_content"

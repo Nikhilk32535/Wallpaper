@@ -10,33 +10,21 @@
     android:layout_alignParentBottom="true"
     android:gravity="center">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_antenna_bars_1"
-
-        />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="What You want to do?"
         android:textColor="@color/Text"
         android:textSize="15sp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:drawableLeft="@drawable/ic_wallpaper"
+        android:padding="5dp"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:drawableTint="@color/Button"
+        />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_brand_google_photos"
-            app:tint="@color/Button"
-            />
 
     <TextView
         android:layout_width="match_parent"
@@ -45,24 +33,14 @@
         android:text="Set Home Screen"
         android:textSize="18sp"
         android:textColor="@color/Text"
-        android:layout_margin="5dp"
-        android:padding="5dp"
-        android:gravity="left"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:gravity="center_vertical">
+        android:padding="5dp"
+        android:gravity="left"
+        android:drawableLeft="@drawable/ic_brand_google_photos"
+        android:drawablePadding="15dp"
+        android:drawableTint="@color/Button"
+        />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_lock"
-            app:tint="@color/Button"
-           />
 
     <TextView
         android:layout_width="match_parent"
@@ -71,23 +49,12 @@
         android:text="Set Lock screen"
         android:textSize="18sp"
         android:textColor="@color/Text"
-        android:layout_margin="5dp"
-        android:padding="5dp"
-        android:gravity="left"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_home_2"
-            app:tint="@color/Button"/>
+        android:padding="5dp"
+        android:gravity="left"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawablePadding="15dp"
+        android:drawableTint="@color/Button"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -96,24 +63,12 @@
         android:text="Set Both "
         android:textSize="18sp"
         android:textColor="@color/Text"
-        android:layout_margin="5dp"
-        android:padding="5dp"
-        android:gravity="left"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_bar_to_down"
-            app:tint="@color/Button"
-            />
+        android:padding="5dp"
+        android:gravity="left"
+        android:drawableTint="@color/Button"
+        android:drawableLeft="@drawable/ic_home_2"
+        android:drawablePadding="15dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -122,10 +77,12 @@
         android:text="Saved in Gallery"
         android:textSize="18sp"
         android:textColor="@color/Text"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:padding="5dp"
-        android:gravity="left"/>
+        android:gravity="left"
+        android:drawableLeft="@drawable/ic_download"
+        android:drawablePadding="15dp"
+        android:drawableTint="@color/Button"/>
 
-    </LinearLayout>
 
 </LinearLayout>
