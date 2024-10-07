@@ -82,7 +82,7 @@ public class category_res extends Fragment {
               currentitem=gridLayoutManager.findFirstVisibleItemPosition();
               totalitem=gridLayoutManager.getItemCount();
 
-              if (isScroll=true && (currentitem+scrollitem==totalitem)){
+              if (isScroll && (currentitem + scrollitem == totalitem)){
                   isScroll=false;
                   number++;
                   loaddata();

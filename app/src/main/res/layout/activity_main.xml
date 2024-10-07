@@ -1,79 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:background="@color/Background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:id="@+id/nav_drawer"
+    android:background="@color/Background"
     tools:context=".activity.MainActivity">
 
+    <!-- Main Content -->
     <RelativeLayout
-        android:id="@+id/heading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bgcorner"
-        >
-        <ImageView
-            android:id="@+id/userinfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_user_circle"
-            android:layout_alignParentStart="true"
-            android:layout_margin="10dp"
-            android:onClick="UserInfo"
-            />
-
-    <TextView
-        android:id="@+id/wallpaperheading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="||Wallpaper||"
-        android:gravity="center"
-        android:textColor="@color/Text"
-        android:lines="1"
-        android:textSize="20sp"
-        android:padding="5dp"
-        android:layout_margin="5dp"
-        android:fontFamily="@string/fontstyle"
-        android:layout_centerHorizontal="true"
-        android:layout_toRightOf="@id/userinfo"
-        android:layout_toLeftOf="@id/logout"
-        tools:ignore="HardcodedText" />
-    <ImageView
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_logout"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="10dp"
-        android:onClick="logout"
-        />
-    </RelativeLayout>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabIndicatorColor="@color/Accent"
-        app:tabSelectedTextColor="@color/Accent"
-        android:background="@color/Background"
-        app:tabTextColor="@color/Text"
-        android:layout_marginBottom="5dp"
-        android:layout_below="@id/heading"
-        app:tabMode="fixed"/>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:tabTextColor="@color/Primary"
-        android:layout_below="@id/tabLayout"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:id="@+id/relativemain"
+        android:padding="10dp">
 
-</RelativeLayout>
+        <!-- Header Section -->
+        <RelativeLayout
+            android:id="@+id/heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgcorner">
+
+            <ImageView
+                android:id="@+id/navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_menu_2"
+                android:layout_alignParentStart="true"
+                android:layout_margin="10dp"
+                android:onClick="Navigation_open"
+                app:tint="@color/icon" />
+
+            <TextView
+                android:id="@+id/wallpaperheading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="||Wallpaper||"
+                android:gravity="center"
+                android:textColor="@color/icon"
+                android:lines="1"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:fontFamily="@string/fontstyle"
+                android:layout_centerHorizontal="true"
+                tools:ignore="HardcodedText"/>
+
+        </RelativeLayout>
+
+        <!-- Tab Layout -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/Accent"
+            app:tabSelectedTextColor="@color/Accent"
+            android:background="@color/Background"
+            app:tabTextColor="@color/Text"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/heading"
+            app:tabMode="fixed"/>
+
+        <!-- ViewPager2 -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tabTextColor="@color/Primary"
+            android:layout_below="@id/tabLayout"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+    </RelativeLayout>
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"
+        android:background="@color/Background"
+        app:itemIconTint="@color/Button"
+        app:itemTextColor="@color/Text"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:text="||Wallpaper||"
         android:gravity="center"
-        android:textColor="@color/Text"
         android:fontFamily="@string/fontstyle"
         android:lines="1"
         android:textSize="20dp"
         android:padding="5dp"
         android:background="@drawable/bgcorner"
+        android:textColor="@color/Text"
         android:layout_margin="7dp"
         android:layout_centerHorizontal="true"
         />
@@ -54,7 +54,7 @@
         android:layout_margin="5dp"
         android:id="@+id/setscreen"
         android:layout_marginBottom="10dp"
-        app:tint="@color/black" />
+        app:tint="@color/icon" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -66,7 +66,7 @@
             android:layout_margin="5dp"
             android:id="@+id/notfavorite"
             android:layout_marginBottom="10dp"
-            app:tint="@color/black" />
+            app:tint="@color/icon" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -80,9 +80,6 @@
             android:visibility="gone"
             android:layout_marginBottom="10dp"
             app:tint="@color/Accent" />
-
-
-
 
     </LinearLayout>
 </RelativeLayout>

@@ -52,6 +52,7 @@ public class full_screen extends AppCompatActivity {
         favoritedbhelper=new Favoritedbhelper(this);
         setupViewPager();
         setupOptionsButton();
+
     }
 
     private void initializeViews() {
@@ -63,6 +64,7 @@ public class full_screen extends AppCompatActivity {
 
         imagelist = getIntent().getParcelableArrayListExtra("datalist");
         position = getIntent().getIntExtra("position", 0);
+
     }
 
     private void setupViewPager() {
@@ -101,6 +103,8 @@ public class full_screen extends AppCompatActivity {
             setupBottomSheetButtons(view);
             bottomSheetDialog.show();
         });
+
+
     }
 
     private void setstatus(boolean b) {
@@ -205,5 +209,12 @@ public class full_screen extends AppCompatActivity {
                 .setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "/Crazy Wallpaper/IMG" + System.currentTimeMillis() + ".jpg");
         downloadManager.enqueue(request);
         utility.toast(this, "Image Downloaded");
+    }
+
+    @Override
+    public void onBackPressed() {
+
+            super.onBackPressed();
+
     }
 }

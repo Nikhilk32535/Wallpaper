@@ -26,7 +26,7 @@
               <TextView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:textColor="@color/Text"
+                  android:textColor="#000"
                   android:text="||NATURE||"
                   android:textSize="35sp"
                   android:fontFamily="@font/saman___"
@@ -51,7 +51,7 @@
               <TextView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:textColor="@color/Text"
+                  android:textColor="#000"
                   android:text="||ANIMAL||"
                   android:textSize="35sp"
                   android:fontFamily="@font/saman___"
@@ -84,7 +84,7 @@
                   android:fontFamily="@font/saman___"
                   android:gravity="center"
                   android:text="||WEATHER||"
-                  android:textColor="@color/Text"
+                  android:textColor="#000"
                   android:textSize="35sp" />
 
        </RelativeLayout>
@@ -106,7 +106,7 @@
               <TextView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:textColor="@color/Text"
+                  android:textColor="#000"
                   android:text="||CARS||"
                   android:textSize="35sp"
                   android:fontFamily="@font/saman___"

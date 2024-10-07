@@ -14,7 +14,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="What You want to do?"
-        android:textColor="@color/Text"
         android:textSize="15sp"
         android:layout_marginBottom="10dp"
         android:drawableLeft="@drawable/ic_wallpaper"
@@ -22,7 +21,8 @@
         android:drawablePadding="10dp"
         android:gravity="center"
         android:textStyle="bold"
-        android:drawableTint="@color/Button"
+        android:textColor="@color/Text"
+        android:drawableTint="@color/icon"
         />
 
 
@@ -33,12 +33,13 @@
         android:text="Set Home Screen"
         android:textSize="18sp"
         android:textColor="@color/Text"
+        android:drawableTint="@color/icon"
         android:layout_margin="10dp"
         android:padding="5dp"
         android:gravity="left"
         android:drawableLeft="@drawable/ic_brand_google_photos"
         android:drawablePadding="15dp"
-        android:drawableTint="@color/Button"
+
         />
 
 
@@ -49,12 +50,13 @@
         android:text="Set Lock screen"
         android:textSize="18sp"
         android:textColor="@color/Text"
+        android:drawableTint="@color/icon"
         android:layout_margin="10dp"
         android:padding="5dp"
         android:gravity="left"
         android:drawableLeft="@drawable/ic_lock"
         android:drawablePadding="15dp"
-        android:drawableTint="@color/Button"/>
+      />
 
     <TextView
         android:layout_width="match_parent"
@@ -63,10 +65,10 @@
         android:text="Set Both "
         android:textSize="18sp"
         android:textColor="@color/Text"
+        android:drawableTint="@color/icon"
         android:layout_margin="10dp"
         android:padding="5dp"
         android:gravity="left"
-        android:drawableTint="@color/Button"
         android:drawableLeft="@drawable/ic_home_2"
         android:drawablePadding="15dp"/>
 
@@ -77,12 +79,12 @@
         android:text="Saved in Gallery"
         android:textSize="18sp"
         android:textColor="@color/Text"
+        android:drawableTint="@color/icon"
         android:layout_margin="10dp"
         android:padding="5dp"
         android:gravity="left"
         android:drawableLeft="@drawable/ic_download"
-        android:drawablePadding="15dp"
-        android:drawableTint="@color/Button"/>
+  />
 
 
 </LinearLayout>

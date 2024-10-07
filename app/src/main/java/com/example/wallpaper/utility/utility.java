@@ -5,8 +5,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 
-
 public class utility {
+
     public static void toast(Context activity, String massage){
         Toast.makeText(activity, massage, Toast.LENGTH_SHORT).show();
     }
@@ -15,4 +15,6 @@ public class utility {
     public static void log(String massage){
         Log.e(utility.tag,massage);
     }
+
+
 }
