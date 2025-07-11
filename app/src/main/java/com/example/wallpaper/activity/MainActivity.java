@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         headerview=navigationView.getHeaderView(0);
         relativeLayout=findViewById(R.id.relativemain);
 
+
         // Set up NavigationView
         navigationView.setNavigationItemSelectedListener(this);
 

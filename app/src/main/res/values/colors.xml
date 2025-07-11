@@ -7,27 +7,28 @@
     <color name="blur">#50ffffff</color>
 
 <!--    Liked one-->
-    <color name="Background">#2B2B2B</color>
-    <color name="Primary">#8E24AA</color>
-    <color name="Accent">#FF7043</color>
-    <color name="Text">#FFFAFA</color>
-    <color name="Button">#4CAF50</color>
-    <color name="icon">#FFFAFA</color>
+    <color name="Background">#EFF8E8</color> <!-- Light Pista Green -->
+    <color name="Primary">#A4D4AE</color> <!-- Light Pista Green -->
+    <color name="Accent">#FF7F50</color> <!-- Light Orange-Red -->
+    <color name="Text">#4B3621</color> <!-- Warm Brownish Text -->
+    <color name="Button">#8BCF9A</color> <!-- Muted Pista Green for buttons -->
+    <color name="icon">#6CBF87</color> <!-- Vibrant Pista Green for icons -->
+
 
     <!--    light background-->
-    <!--    <color name="Background">#F5F5F5</color>-->
-    <!--    <color name="Primary">#2196F3</color>-->
-    <!--    <color name="Accent">#FF5722</color>-->
-    <!--    <color name="Text">#212121</color>-->
-    <!--    <color name="Button">#3F51B5</color>-->
-    <!--    <color name="icon">#000</color>-->
+<!--        <color name="Background">#F5F5F5</color>-->
+<!--        <color name="Primary">#2196F3</color>-->
+<!--        <color name="Accent">#FF5722</color>-->
+<!--        <color name="Text">#212121</color>-->
+<!--        <color name="Button">#3F51B5</color>-->
+<!--        <color name="icon">#000</color>-->
 
     <!--    &lt;!&ndash;    Dark Background&ndash;&gt;-->
-    <!--    <color name="DarkBackground">#1E1E1E</color>-->
-    <!--    <color name="DarkPrimary">#BB86FC</color>-->
-    <!--    <color name="DarkAccent">#CF6679</color>-->
-    <!--    <color name="DarkText">#E0E0E0</color>-->
-    <!--    <color name="DarkButton">#6200EE</color>-->
-    <!--    <color name="Darkicon">#BB86FC</color>-->
+<!--        <color name="DarkBackground">#1E1E1E</color>-->
+<!--        <color name="DarkPrimary">#BB86FC</color>-->
+<!--        <color name="DarkAccent">#CF6679</color>-->
+<!--        <color name="DarkText">#E0E0E0</color>-->
+<!--        <color name="DarkButton">#6200EE</color>-->
+<!--        <color name="Darkicon">#BB86FC</color>-->
 </resources>
 

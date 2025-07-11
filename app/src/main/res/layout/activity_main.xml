@@ -9,12 +9,24 @@
     android:background="@color/Background"
     tools:context=".activity.MainActivity">
 
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        />
+
     <!-- Main Content -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/relativemain"
-        android:padding="10dp">
+        android:background="@color/Background"
+        >
+
+
 
         <!-- Header Section -->
         <RelativeLayout
@@ -39,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:text="||Wallpaper||"
                 android:gravity="center"
-                android:textColor="@color/icon"
+                android:textColor="@color/Text"
                 android:lines="1"
                 android:textSize="20sp"
                 android:padding="5dp"
@@ -57,10 +69,11 @@
             android:layout_height="wrap_content"
             app:tabIndicatorColor="@color/Accent"
             app:tabSelectedTextColor="@color/Accent"
-            android:background="@color/Background"
+            android:background="@color/Primary"
             app:tabTextColor="@color/Text"
             android:layout_marginBottom="5dp"
             android:layout_below="@id/heading"
+            android:layout_marginTop="5dp"
             app:tabMode="fixed"/>
 
         <!-- ViewPager2 -->
@@ -68,9 +81,10 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="10dp"
             app:tabTextColor="@color/Primary"
             android:layout_below="@id/tabLayout"
-            android:layout_marginTop="8dp"
+            android:background="@color/transparent"
             android:layout_marginBottom="8dp"/>
 
     </RelativeLayout>

@@ -175,6 +175,7 @@ public class full_screen extends AppCompatActivity {
                             switch (screen) {
                                 case "home":
                                     wallpaperManager.setBitmap(resource, null, true, WallpaperManager.FLAG_SYSTEM);
+                                   // resizeimage(resource);
                                     utility.toast(full_screen.this, "Set on Home Screen");
                                     break;
                                 case "lock":
@@ -200,6 +201,27 @@ public class full_screen extends AppCompatActivity {
                 });
     }
 
+//    private void resizeimage(Bitmap resource) {
+//        // Example: Let the user choose the desired width and height
+//        int newWidth = desiredWidth;  // Get this from user input
+//        int newHeight = desiredHeight;  // Get this from user input
+//
+//        Bitmap resizedBitmap = Bitmap.createScaledBitmap(originalBitmap, newWidth, newHeight, false);
+//
+//        // Now set this resized bitmap as wallpaper
+//        setWallpaper(resizedBitmap);
+//    }
+//    public void setWallpaper(Bitmap bitmap) {
+//        WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
+//        try {
+//            wallpaperManager.setBitmap(bitmap);
+//            utility.toast(getApplicationContext(), "Wallpaper set successfully!");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            utility.toast(getApplicationContext(), "Failed to set wallpaper");
+//        }
+//    }
+
     private void downloadImage() {
         DownloadManager downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
         String imageUrl = imagelist.get(imageView.getCurrentItem()).getUrl();
@@ -216,5 +238,9 @@ public class full_screen extends AppCompatActivity {
 
             super.onBackPressed();
 
+    }
+
+    public void backbtn(View view) {
+        onBackPressed();
     }
 }

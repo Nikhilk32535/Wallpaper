@@ -9,38 +9,48 @@
     android:background="@color/Background"
     tools:context=".fragment.category_view">
 
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
        <RelativeLayout
            android:id="@+id/nature"
-           android:layout_width="match_parent"
-           android:layout_height="100dp"
+           android:layout_width="wrap_content"
+           android:layout_height="180dp"
            android:background="@drawable/bgcorner"
            android:layout_margin="10dp"
            android:backgroundTint="#5BB60E"
+           android:layout_weight="1"
            android:padding="5dp">
 
               <ImageView
+                  android:id="@+id/natureimg"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:src="@drawable/ic_christmas_tree"
                   app:tint="@color/icon" />
+
               <TextView
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:textColor="#000"
-                  android:text="||NATURE||"
-                  android:textSize="35sp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:layout_marginEnd="3dp"
                   android:fontFamily="@font/saman___"
-                  android:gravity="center"/>
+                  android:gravity="center_horizontal"
+                  android:layout_alignParentBottom="true"
+                  android:text="||NATURE||"
+                  android:textColor="#000"
+                  android:textSize="25sp" />
 
        </RelativeLayout>
 
        <RelativeLayout
            android:id="@+id/animal"
-           android:layout_width="match_parent"
-           android:layout_height="100dp"
+           android:layout_width="wrap_content"
+           android:layout_height="180dp"
            android:background="@drawable/bgcorner"
            android:layout_margin="10dp"
            android:backgroundTint="#C11E58"
+           android:layout_weight="1"
            android:padding="5dp">
 
               <ImageView
@@ -50,22 +60,32 @@
                   app:tint="@color/icon"/>
               <TextView
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:textColor="#000"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:layout_marginEnd="3dp"
+                  android:layout_alignParentBottom="true"
                   android:text="||ANIMAL||"
-                  android:textSize="35sp"
+                  android:textSize="25sp"
+                  android:textColor="#000"
                   android:fontFamily="@font/saman___"
                   android:gravity="center"/>
 
        </RelativeLayout>
 
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
        <RelativeLayout
            android:id="@+id/weather"
            android:layout_width="match_parent"
-           android:layout_height="100dp"
+           android:layout_height="180dp"
            android:background="@drawable/bgcorner"
            android:layout_margin="10dp"
            android:backgroundTint="#4D63E2"
+           android:layout_weight="1"
            android:padding="5dp">
 
               <ImageView
@@ -76,26 +96,26 @@
 
               <TextView
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_alignParentEnd="true"
-                  android:layout_alignParentBottom="true"
-                  android:layout_marginEnd="5dp"
-                  android:layout_marginBottom="4dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:layout_marginEnd="3dp"
                   android:fontFamily="@font/saman___"
-                  android:gravity="center"
+                  android:gravity="center_horizontal"
+                  android:layout_alignParentBottom="true"
                   android:text="||WEATHER||"
                   android:textColor="#000"
-                  android:textSize="35sp" />
+                  android:textSize="25sp" />
 
        </RelativeLayout>
 
        <RelativeLayout
            android:id="@+id/cars"
            android:layout_width="match_parent"
-           android:layout_height="100dp"
+           android:layout_height="180dp"
            android:background="@drawable/bgcorner"
            android:layout_margin="10dp"
            android:backgroundTint="#00B0FF"
+           android:layout_weight="1"
            android:padding="5dp">
 
               <ImageView
@@ -105,13 +125,19 @@
                   app:tint="@color/icon"/>
               <TextView
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="3dp"
+                  android:layout_marginEnd="3dp"
+                  android:fontFamily="@font/saman___"
+                  android:gravity="center_horizontal"
+                  android:layout_alignParentBottom="true"
                   android:textColor="#000"
                   android:text="||CARS||"
-                  android:textSize="35sp"
-                  android:fontFamily="@font/saman___"
-                  android:gravity="center"/>
+                  android:textSize="25sp"
+                />
 
        </RelativeLayout>
+
+       </LinearLayout>
 
 </LinearLayout>
